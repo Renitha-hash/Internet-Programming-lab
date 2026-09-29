@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket Reservation System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightblue;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            background-color: white;
+            max-width: 900px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        h2 {
+            color: #2196f3;
+            border-bottom: 2px solid #2196f3;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            margin-bottom: 25px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #2196f3;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        img {
+            border-radius: 6px;
+            object-fit: cover;
+        }
+
+        form {
+            background-color: #fdfdfd;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #444;
+        }
+
+        input[type="number"] {
+            padding: 8px;
+            width: 150px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 5px;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+
+        .success-box {
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #e8f4ff;
+            border: 2px solid #2196f3;
+            border-radius: 8px;
+        }
+
+        button[type="submit"] {
+            background-color: #2196f3;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0b7dda;
+        }
+
+        ul {
+            background-color: #fff8dc;
+            padding: 15px 20px 15px 40px;
+            border-radius: 5px;
+            border-left: 5px solid #ffeb3b;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Let's Book a Show!!</h1>
+
+    <h2>Available Movies</h2>
+    <table>
+        <tr>
+            <th>Movie Name</th>
+            <th>Brochure</th>
+            <th>Movie Time</th>
+            <th>Date</th>
+            <th>Seats Available</th>
+        </tr>
+        <tr>
+            <td>Blast</td>
+            <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNoo8fYFT-i8Mmi5mASfMoYOsp9MwLB87W-9zOMELrdw&s=10" width="90" height="130" alt="Blast"></td>
+            <td>10:10 AM</td>
+            <td>24 June</td>
+            <td><span id="seats-Blast">5</span></td>
+        </tr>
+        <tr>
+            <td>Youth</td>
+            <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ7Jf-7JL3ygoNjuB6mkmV8K_1A4l3Co_h5kcaFOhd1lir7_TMUwRhkdw&s=10" width="90" height="130" alt="Youth"></td>
+            <td>12:30 PM</td>
+            <td>24 June</td>
+            <td><span id="seats-Youth">29</span></td>
+        </tr>
+        <tr>
+            <td>With Love</td>
+            <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg2WhnJisgVNo7tiQ7_7960sk-17P7eYBlbXM85xumtQ&s=10" width="90" height="130" alt="With Love"></td>
+            <td>12:30 PM</td>
+            <td>25 June</td>
+            <td><span id="seats-With Love">24</span></td>
+        </tr>
+    </table>
+
+    <h2>Movie Booking Form</h2>
+    <form id="bookingForm">
+        <div class="form-group">
+            <label>Movie Name:</label><br>
+            <input type="radio" name="movie" value="Blast"> Blast<br>
+            <input type="radio" name="movie" value="Youth"> Youth<br>
+            <input type="radio" name="movie" value="With Love"> With Love<br>
+        </div>
+
+        <div class="form-group">
+            <label>Movie Time:</label><br>
+            <input type="radio" name="time" value="10:10 AM"> 10:10 AM<br>
+            <input type="radio" name="time" value="12:30 PM"> 12:30 PM<br>
+        </div>
+
+        <div class="form-group">
+            <label>Date:</label><br>
+            <input type="radio" name="date" value="24 June"> 24 June<br>
+            <input type="radio" name="date" value="25 June"> 25 June<br>
+        </div>
+
+        <div class="form-group">
+            <label for="numTickets">Number of Tickets:</label><br>
+            <input type="number" id="numTickets" min="1" placeholder="Enter quantity">
+        </div>
+
+        <div class="form-group">
+            <label>Seat Type:</label><br>
+            <input type="radio" name="seat" value="Regular"> Regular<br>
+            <input type="radio" name="seat" value="Premium"> Premium<br>
+            <input type="radio" name="seat" value="VIP"> VIP<br>
+        </div>
+
+        <div class="form-group">
+            <label>Payment Method:</label><br>
+            <input type="radio" name="payment" value="UPI"> UPI<br>
+            <input type="radio" name="payment" value="Card"> Card<br>
+            <input type="radio" name="payment" value="Net Banking"> Net Banking<br>
+        </div>
+
+        <div id="formError" class="error"></div>
+
+        <button type="submit">Proceed Payment</button>
+    </form>
+
+    <div id="bookingResult"></div>
+
+    <h2>Instructions</h2>
+    <ul>
+        <li>Select only one movie.</li>
+        <li>Choose your preferred show time.</li>
+        <li>Select the correct booking date.</li>
+        <li>Check seat availability before proceeding.</li>
+        <li>Click <b>Proceed Payment</b> to complete your booking.</li>
+    </ul>
+</div>
+
+
+
+</body>
+</html>
