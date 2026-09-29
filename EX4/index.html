@@ -1,0 +1,217 @@
+
+<!DOCTYPE html> 
+
+<html lang="en"> 
+
+<head> 
+
+  <meta charset="UTF-8"> 
+
+  <title>Job Portal</title> 
+
+  <style> 
+
+    body { 
+
+      margin: 0; 
+
+      font-family: Arial, sans-serif; 
+
+      background: #f2f2f2; 
+
+    } 
+
+    header { 
+
+      background: #0056b3; 
+
+      color: white; 
+
+      padding: 20px; 
+
+      text-align: center; 
+
+    } 
+
+    nav a { 
+
+      color: white; 
+
+      text-decoration: none; 
+
+      margin: 15px; 
+
+      font-size: 18px; 
+
+    } 
+
+    .hero { 
+
+      text-align: center; 
+
+      padding: 60px; 
+
+    } 
+
+    .card { 
+
+      width: 70%; 
+
+      margin: auto; 
+
+      background: white; 
+
+      padding: 20px; 
+
+      border-radius: 10px; 
+
+      box-shadow: 0 0 10px gray; 
+
+    } 
+
+    button { 
+
+      padding: 12px 20px; 
+
+      margin: 10px; 
+
+      font-size: 16px; 
+
+      background: #007bff; 
+
+      color: white; 
+
+      border: none; 
+
+      border-radius: 5px; 
+
+      cursor: pointer; 
+
+    } 
+
+    button:hover { 
+
+      background: #0056b3; 
+
+    } 
+
+  </style> 
+
+</head> 
+
+<body> 
+
+  <header> 
+
+    <h1>JOB PORTAL</h1> 
+
+    <nav> 
+
+      <a href="index.html">Home</a> 
+
+      <a href="register.html">Register</a> 
+
+      <a href="https://www.linkedin.com/jobs/" target="_blank">Find Jobs</a> 
+
+    </nav> 
+
+  </header> 
+
+  <div class="hero"> 
+
+    <div class="card"> 
+
+      <h2>Welcome to Job Portal</h2> 
+
+      <p id="msg"></p> 
+
+      <p id="date"></p> 
+
+      <p id="details"></p> 
+
+      <a href="register.html"> 
+
+        <button>Register Now</button> 
+
+      </a> 
+
+      <a href="https://www.linkedin.com/jobs/" target="_blank"> 
+
+        <button>Explore Jobs</button> 
+
+      </a> 
+
+    </div> 
+
+  </div> 
+
+  <script> 
+
+    // String Object 
+
+    let message = new String("Welcome to Job Portal"); 
+
+    document.getElementById("msg").innerHTML = 
+
+      message.toUpperCase() + "<br>Length : " + message.length; 
+
+    // Date Object 
+
+    let today = new Date(); 
+
+    document.getElementById("date").innerHTML = 
+
+      "<b>Date :</b> " + today.toDateString() + 
+
+      "<br><b>Time :</b> " + today.toLocaleTimeString(); 
+
+    // Object 
+
+    let portal = { 
+
+      name: "Career Connect", 
+
+      company: "Job Portal", 
+
+      jobs: 3500, 
+
+      location: "India" 
+
+    }; 
+
+    document.getElementById("details").innerHTML = 
+
+      "<h3>Portal Information</h3>" + 
+
+      "Portal Name : " + portal.name + "<br>" + 
+
+      "Company : " + portal.company + "<br>" + 
+
+      "Available Jobs : " + portal.jobs + "<br>" + 
+
+      "Location : " + portal.location; 
+
+  </script> 
+
+</body> 
+
+</html> 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
