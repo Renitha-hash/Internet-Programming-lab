@@ -1,0 +1,71 @@
+[
+    {
+        "id": "6ab243061f7e0",
+        "first_name": "pavitra",
+        "last_name": "dharanitha",
+        "email": "cse@gmail.com",
+        "phone": "4566654344",
+        "password": "$2y$10$zoo7I2YNmo.rXHrnlFYoWeQ42JmmMLeS5lvbEaU9xunuHfKgQYivi",
+        "job_title": "ml",
+        "experience": 5,
+        "linkedin": "https:\/\/github.com\/pavitra",
+        "github": "https:\/\/github.com\/dharanitha",
+        "resume_path": ".\/uploads\/c7703cd717c4781e45b0689a43d1ab36.docx",
+        "created_at": "2026-09-22 10:57:42"
+    },
+    {
+        "id": "6ab244c37e5dd",
+        "first_name": "24ucs031",
+        "last_name": "dfg",
+        "email": "csegrdsd@gmail.com",
+        "phone": "4566654344",
+        "password": "$2y$10$IpHwAcEUQPBTZz3Ml34.q.AN1MaeJ\/M.Onn80oAttPgDbn8\/JOTae",
+        "card_masked": "****-****-****-4564",
+        "card_expiry": "12\/06",
+        "created_at": "2026-09-22 11:05:07"
+    },
+    {
+        "id": "6ab24555bbab6",
+        "first_name": "pavitra",
+        "last_name": "dharanitha",
+        "email": "pavi@gmail.com",
+        "phone": "9913749622",
+        "password": "$2y$10$ueX\/6qNtxOokNKd2kaKyROIMUiTMSTynvAg4vJ1rcmfJe4bYj1i2q",
+        "card_masked": "****-****-****-4234",
+        "card_expiry": "12\/06",
+        "created_at": "2026-09-22 11:07:33"
+    },
+    {
+        "id": "6ab25192e006d",
+        "first_name": "pavitra",
+        "last_name": "dharanitha",
+        "email": "pavitra@gmail.com",
+        "phone": "9913749622",
+        "password": "$2y$10$jCu3Lz1wNqYfgKmqdOQAW.DFF05Frlcfr5S7UPjiYZgyUQfDjfbBm",
+        "card_masked": "****-****-****-4234",
+        "card_expiry": "12\/06",
+        "created_at": "2026-09-22 11:59:46"
+    },
+    {
+        "id": "6ab255a44967a",
+        "first_name": "pavitra",
+        "last_name": "dharanitha",
+        "email": "hello@gmail.com",
+        "phone": "4566654344",
+        "password": "$2y$10$VBG6be36chKcd2wLNbytSO0mxqr0eMd.qCav\/ocovU9.W6nLwaAcy",
+        "card_masked": "****-****-****-4564",
+        "card_expiry": "12\/06",
+        "created_at": "2026-09-22 12:17:08"
+    },
+    {
+        "id": "6ab255e842608",
+        "first_name": "pavitra",
+        "last_name": "dharanitha",
+        "email": "helloa@gmail.com",
+        "phone": "4566654344",
+        "password": "$2y$10$m1wxFGulRDAqi1ssYMmWpeJZ296Zgzep5Qy8aBxiTE3nWYC5731fO",
+        "card_masked": "****-****-****-8855",
+        "card_expiry": "12\/89",
+        "created_at": "2026-09-22 12:18:16"
+    }
+]

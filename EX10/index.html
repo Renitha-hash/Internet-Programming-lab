@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registration</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f7f6; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+    .card { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 480px; margin: 20px; }
+    h2 { color: #333; text-align: center; margin-top: 0; }
+    .form-group { margin-bottom: 15px; }
+    label { display: block; margin-bottom: 5px; font-weight: bold; color: #555; font-size: 14px; }
+    input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; font-size: 14px; }
+    input:focus { border-color: #0d6efd; outline: none; }
+    .row { display: flex; gap: 10px; }
+    .row .form-group { flex: 1; }
+    .btn-submit { display: block; width: 100%; text-align: center; margin-top: 20px; color: #fff; background: #0d6efd; padding: 12px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; }
+    .btn-submit:hover { background: #0b5ed7; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Create an Account</h2>
+    <form action="register.php" method="POST">
+      
+      <div class="row">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName" required>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="row">
+        <div class="form-group">
+          <label for="phone">Phone (10 digits)</label>
+          <input type="tel" id="phone" name="phone" pattern="^\d{10}$" placeholder="9876543210" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password (min 6 chars)</label>
+          <input type="password" id="password" name="password" minlength="6" required>
+        </div>
+      </div>
+
+      <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+      <h3 style="font-size: 16px; color: #444; margin-bottom: 15px;">Payment Details</h3>
+
+      <div class="form-group">
+        <label for="cardNumber">Card Number</label>
+        <input type="text" id="cardNumber" name="cardNumber" placeholder="16 digits" pattern="^\d{13,19}$" required>
+      </div>
+
+      <div class="row">
+        <div class="form-group">
+          <label for="cardExpiry">Expiry (MM/YY)</label>
+          <input type="text" id="cardExpiry" name="cardExpiry" placeholder="MM/YY" pattern="^(0[1-9]|1[0-2])\/\d{2}$" required>
+        </div>
+        <div class="form-group">
+          <label for="cardCvv">CVV</label>
+          <input type="text" id="cardCvv" name="cardCvv" placeholder="123" pattern="^\d{3,4}$" required>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-submit">Register Now</button>
+    </form>
+  </div>
+</body>
+</html>
