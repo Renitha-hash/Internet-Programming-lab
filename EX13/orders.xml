@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<orders>
+    <order>
+        <id>101</id>
+        <customer>John Doe</customer>
+        <snack>French Fries</snack>
+        <quantity>2</quantity>
+        <price>80</price>
+    </order>
+    <order>
+        <id>102</id>
+        <customer>Jane Smith</customer>
+        <snack>Chocolate</snack>
+        <quantity>3</quantity>
+        <price>50</price>
+    </order>
+    <order>
+        <id>103</id>
+        <customer>Arun Kumar</customer>
+        <snack>Popcorn</snack>
+        <quantity>2</quantity>
+        <price>60</price>
+    </order>
+    <order>
+        <id>104</id>
+        <customer>Priya Sharma</customer>
+        <snack>Veg Puff</snack>
+        <quantity>4</quantity>
+        <price>30</price>
+    </order>
+    <order>
+        <id>105</id>
+        <customer>Rahul Kumar</customer>
+        <snack>Potato Chips</snack>
+        <quantity>2</quantity>
+        <price>40</price>
+    </order>
+    <order>
+        <id>106</id>
+        <customer>Divya Raj</customer>
+        <snack>Cookies</snack>
+        <quantity>3</quantity>
+        <price>45</price>
+    </order>
+    <order>
+        <id>107</id>
+        <customer>Vijay Anand</customer>
+        <snack>Donut</snack>
+        <quantity>2</quantity>
+        <price>55</price>
+    </order>
+    <order>
+        <id>108</id>
+        <customer>Meena Joseph</customer>
+        <snack>Sandwich</snack>
+        <quantity>2</quantity>
+        <price>70</price>
+    </order>
+    <order>
+        <id>109</id>
+        <customer>Arun Raj</customer>
+        <snack>Cupcake</snack>
+        <quantity>3</quantity>
+        <price>50</price>
+    </order>
+</orders>
