@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+    <book id="1">
+        <title>PHP and MySQL Web Development</title>
+        <author>Luke Welling and Laura Thomson</author>
+        <year>2016</year>
+        <price>49.99</price>
+    </book>
+    <book id="2">
+        <title>Clean Code</title>
+        <author>Robert C. Martin</author>
+        <year>2008</year>
+        <price>37.50</price>
+    </book>
+    <book id="3">
+        <title>The Pragmatic Programmer</title>
+        <author>Andrew Hunt and David Thomas</author>
+        <year>2019</year>
+        <price>45.00</price>
+    </book>
+    <book id="4">
+        <title>JavaScript: The Good Parts</title>
+        <author>Douglas Crockford</author>
+        <year>2008</year>
+        <price>29.99</price>
+    </book>
+    <book id="5">
+        <title>Head First Design Patterns</title>
+        <author>Eric Freeman and Elisabeth Robson</author>
+        <year>2004</year>
+        <price>42.00</price>
+    </book>
+    <book id="6">
+        <title>Designing Data-Intensive Applications</title>
+        <author>Martin Kleppmann</author>
+        <year>2017</year>
+        <price>50.00</price>
+    </book>
+    <book id="7">
+        <title>Eloquent JavaScript</title>
+        <author>Marijn Haverbeke</author>
+        <year>2018</year>
+        <price>35.00</price>
+    </book>
+    <book id="8">
+        <title>You Don't Know JS: ES6 &amp; Beyond</title>
+        <author>Kyle Simpson</author>
+        <year>2015</year>
+        <price>25.00</price>
+    </book>
+    <book id="9">
+        <title>Artificial Intelligence: A Modern Approach</title>
+        <author>Stuart Russell and Peter Norvig</author>
+        <year>2020</year>
+        <price>95.00</price>
+    </book>
+    <book id="10">
+        <title>The Mythical Man-Month</title>
+        <author>Frederick P. Brooks Jr.</author>
+        <year>1995</year>
+        <price>30.00</price>
+    </book>
+</catalog>
