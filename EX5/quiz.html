@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Internet Programming Quiz</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px;
+
+            font-family: Arial, sans-serif;
+
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuv08kUFWODRN662YidqZqjUbZWADhcX9W_luuaNcoRw&s=10");
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        form {
+            background-color: white;
+            max-width: 850px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 12px;
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .student-details {
+            background-color: #f0f8ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .student-details h2 {
+            margin-top: 0;
+        }
+
+        .student-details label {
+            display: inline-block;
+            width: 100px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 280px;
+            padding: 10px;
+            margin: 5px 0 10px;
+
+            border: 1px solid #aaa;
+            border-radius: 5px;
+
+            font-size: 14px;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus {
+            border-color: #2196f3;
+            outline: none;
+        }
+
+        .question {
+            margin-top: 20px;
+            padding: 20px;
+
+            background-color: #fafafa;
+
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+
+        .question p {
+            margin-top: 0;
+        }
+
+        .question label {
+            display: block;
+            padding: 7px;
+
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .question label:hover {
+            background-color: #eeeeee;
+        }
+
+        .text-answer {
+            width: 100% !important;
+            max-width: 500px;
+            padding: 12px !important;
+            font-size: 15px;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin: 0 0 5px 100px;
+        }
+
+        .submit-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 12px 35px;
+
+            background-color: #2196f3;
+            color: white;
+
+            border: none;
+            border-radius: 6px;
+
+            cursor: pointer;
+            font-size: 17px;
+        }
+
+        button:hover {
+            background-color: #0b7dda;
+        }
+
+        .reset-button {
+            background-color: #777;
+            margin-left: 10px;
+        }
+
+        .reset-button:hover {
+            background-color: #555;
+        }
+
+        .instruction {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Internet Programming Quiz</h1>
+
+    <form id="quizForm"
+          action="QuizServlet"
+          method="post">
+
+        <!-- ================= STUDENT DETAILS ================= -->
+
+        <div class="student-details">
+
+            <h2>Student Details</h2>
+
+            <label for="name">Name:</label>
+
+            <input type="text"
+                   id="name"
+                   name="name"
+                   placeholder="Enter your name"
+                   required>
+
+            <p id="nameError" class="error"></p>
+
+
+            <label for="rollno">Roll No:</label>
+
+            <input type="text"
+                   id="rollno"
+                   name="rollno"
+                   placeholder="Enter roll number"
+                   required>
+
+            <p id="rollError" class="error"></p>
+
+
+            <label for="email">Email:</label>
+
+            <input type="email"
+                   id="email"
+                   name="email"
+                   placeholder="Enter your email"
+                   required>
+
+            <p id="emailError" class="error"></p>
+
+        </div>
+
+
+        <!-- ================= INSTRUCTION ================= -->
+
+        <div class="instruction">
+
+            <strong>Instructions:</strong>
+
+            <ul>
+                <li>Answer all 10 questions.</li>
+                <li>Questions 3 and 9 require text answers.</li>
+                <li>Each question carries 1 mark.</li>
+                <li>Minimum 50% is required to pass.</li>
+            </ul>
+
+        </div>
+
+
+        <!-- ================= QUESTION 1 ================= -->
+
+        <div class="question">
+
+            <p>
+                <strong>
+                    1. What does HTML stand for?
+                </strong>
+            </p>
+
+            <label>
+                <input type="radio"
+                       name="q1"
+                       value="Hyper Text Markup Language"
+                       required>
+
+                Hyper Text Markup Language
+            </label>
+
+            <label>
+                <input type="radio"
+                       name="q1"
+                       value="High Text Machine Language">
+
+                High Text Machine Language
+            </label>
+
+            <label>
+                <input type="radio"
+                       name="q1"
+                       value="Hyperlink Text Management Language">
+
+                Hyperlink Text Management Language
+            </label>
+
+            <label>
+                <input type="radio"
+                       name="q1"
+                       value="Home Tool Markup Language">
+
+                Home Tool Markup Language
+            </label>
+
+        </div>
+
+
+        <!-- ================= QUESTION 2 ================= -->
+
+        <div class="question">
+
+            <p>
+                <strong>
+                    2. Which tag is used to create a paragraph in HTML?
+                </strong>
+            </p>
+
+            <label>
+                <input type="radio"
+                       name="q2"
+                       value="&lt;p&gt;"
+                       required>
+
+                &lt;p&gt;
+            </label>
+
+            <label>
+                <input type="radio"
+                       name="q2"
+                       value="&lt;h1&gt;">
+
+                &lt;h1&gt;
+            </label>
+
+            <label>
+                <input type="radio"
+                       name="q2"
+                       value="&lt;br&gt;">
+
+                &lt;br&gt;
+            </label>
+
+            <label>
+                <input type="radio"
+                       name="q2"
+                       value="&lt;para&gt;">
+
+                &lt;para&gt;
+            </label>
+
+        </div>
+
+
+        <!-- ================= QUESTION 3 - TEXT ================= -->
+
+        <div class="question">
+
+            <p>
+                <strong>
+                    3. Which HTML tag is used to create a hyperlink?
+                </strong>
+            </p>
+
+            <input type="text"
+                   name="q3"
+                   class="text-answer"
+                   placeholder="Enter the HTML tag"
+                   required>
+
+        </div>
+
+
+        <!-- ================= QUESTION 4 ================= -->
+
+        <div class="question">
+
+            <p>
+                <strong>
+                    4. Which tag is used to insert an image in HTML?
+                </strong>
+            </p>
+
+            <label>
+                <input type="radio"
+                       name="q4"
+                       value="&lt;image&gt;"
+                       required>
+
+                &lt;image&gt;
+            </label>
+
+            <label>
+                <input type="radio"
+                       name="q4"
+                       value="&lt;img&gt;">
+
+                &lt;img&gt;
+            </label>
+
+            <label>
+                <input type="radio"
+                       name="q4"
+                       value="&lt;picture&gt;">
+
+                &lt;picture&gt;
+            </label>
+
+            <label>
+                <input type="radio"
+                       name="q4"
+                       value="&lt;src&gt;">
+
+                &lt;src&gt;
+            </label>
+
+        </div>
+
+
+        <!-- ================= QUESTION 5 ================= -->
+
+        <div class="question">
+
+            <p>
+                <strong>
+                    5. What is CSS mainly used for?
+                </strong>
+            </p>
+
+            <label>
+                <input type="radio"
+                       name="q5"
+                       value="Creating databases"
+                       required>
+
+                Creating databases
+            </label>
+
+            <label>
+                <input type="radio"
+                       name="q5"
+                       value="Styling web pages">
+
+                Styling web pages
+            </label>
+
+            <label>
+                <input type="radio"
+                       name="q5"
+                       value="Writing server programs">
+
+                Writing server programs
+            </label>
+
+            <label>
+                <input type="radio"
+                       name="q5"
+                       value="Creating operating systems">
+
+                Creating operating systems
+            </label>
+
+        </div>
+
+
+        <!-- ================= QUESTION 6 ================= -->
+
+        <div class="question">
+
+            <p>
+                <strong>
+                    6. What does CSS stand for?
+                </strong>
+            </p>
+
+            <label>
+                <input type="radio"
+                       name="q6"
+                       value="Computer Style Sheets"
+                       required>
+
+                Computer Style Sheets
+            </label>
+
+            <label>
+                <input type="radio"
+                       name="q6"
+                       value="Cascading Style Sheets">
+
+                Cascading Style Sheets
+            </label>
+
+            <label>
+                <input type="radio"
+                       name="q6"
+                       value="Creative Style System">
+
+                Creative Style System
+            </label>
+
+            <label>
+                <input type="radio"
+                       name="q6"
+                       value="Colorful Style Sheets">
+
+                Colorful Style Sheets
+            </label>
+
+        </div>
+
+
+        <!-- ================= QUESTION 7 ================= -->
+
+        <div class="question">
+
+            <p>
+                <strong>
+                    7. Which CSS property is used to change the text color?
+                </strong>
+            </p>
+
+            <label>
+                <input type="radio"
+                       name="q7"
+                       value="font-color"
+                       required>
+
+                font-color
+            </label>
+
+            <label>
+                <input type="radio"
+                       name="q7"
+                       value="text-color">
+
+                text-color
+            </label>
+
+            <label>
+                <input type="radio"
+                       name="q7"
+                       value="color">
+
+                color
+            </label>
+
+            <label>
+                <input type="radio"
+                       name="q7"
+                       value="background-color">
+
+                background-color
+            </label>
+
+        </div>
+
+
+        <!-- ================= QUESTION 8 ================= -->
+
+        <div class="question">
+
+            <p>
+                <strong>
+                    8. Which CSS property is used to change the background color?
+                </strong>
+            </p>
+
+            <label>
+                <input type="radio"
+                       name="q8"
+                       value="color"
+                       required>
+
+                color
+            </label>
+
+            <label>
+                <input type="radio"
+                       name="q8"
+                       value="background-color">
+
+                background-color
+            </label>
+
+            <label>
+                <input type="radio"
+                       name="q8"
+                       value="bgcolor">
+
+                bgcolor
+            </label>
+
+            <label>
+                <input type="radio"
+                       name="q8"
+                       value="background">
+
+                background
+            </label>
+
+        </div>
+
+
+        <!-- ================= QUESTION 9 - TEXT ================= -->
+
+        <div class="question">
+
+            <p>
+                <strong>
+                    9. Which HTML tag is used to create an unordered list?
+                </strong>
+            </p>
+
+            <input type="text"
+                   name="q9"
+                   class="text-answer"
+                   placeholder="Enter the HTML tag"
+                   required>
+
+        </div>
+
+
+        <!-- ================= QUESTION 10 ================= -->
+
+        <div class="question">
+
+            <p>
+                <strong>
+                    10. Which CSS property is used to change the font size?
+                </strong>
+            </p>
+
+            <label>
+                <input type="radio"
+                       name="q10"
+                       value="font-style"
+                       required>
+
+                font-style
+            </label>
+
+            <label>
+                <input type="radio"
+                       name="q10"
+                       value="font-family">
+
+                font-family
+            </label>
+
+            <label>
+                <input type="radio"
+                       name="q10"
+                       value="font-size">
+
+                font-size
+            </label>
+
+            <label>
+                <input type="radio"
+                       name="q10"
+                       value="text-size">
+
+                text-size
+            </label>
+
+        </div>
+
+
+        <!-- ================= BUTTONS ================= -->
+
+        <div class="submit-container">
+
+            <button type="submit">
+                Submit Quiz
+            </button>
+
+            <button type="reset"
+                    class="reset-button">
+                Reset
+            </button>
+
+        </div>
+
+    </form>
+
+
+    <!-- ================= JAVASCRIPT VALIDATION ================= -->
+
+    <script>
+
+        const nameInput =
+            document.getElementById("name");
+
+        const rollInput =
+            document.getElementById("rollno");
+
+        const emailInput =
+            document.getElementById("email");
+
+
+        /* Name validation */
+
+        nameInput.addEventListener("input", function () {
+
+            this.value =
+                this.value.replace(/[^A-Za-z ]/g, "");
+
+            this.value =
+                this.value.replace(/\s{2,}/g, " ");
+
+            document.getElementById("nameError")
+                .textContent = "";
+        });
+
+
+        /* Roll number validation */
+
+        rollInput.addEventListener("input", function () {
+
+            this.value =
+                this.value.replace(/[^0-9]/g, "");
+
+            document.getElementById("rollError")
+                .textContent = "";
+        });
+
+
+        /* Email validation */
+
+        emailInput.addEventListener("input", function () {
+
+            document.getElementById("emailError")
+                .textContent = "";
+        });
+
+
+        /* Form validation */
+
+        document.getElementById("quizForm")
+            .addEventListener("submit", function (event) {
+
+                const name =
+                    nameInput.value.trim();
+
+                const rollno =
+                    rollInput.value.trim();
+
+                const email =
+                    emailInput.value.trim();
+
+
+                /* Validate name */
+
+                if (!/^[A-Za-z ]+$/.test(name)) {
+
+                    event.preventDefault();
+
+                    document.getElementById("nameError")
+                        .textContent =
+                        "Please enter a valid name.";
+
+                    nameInput.focus();
+
+                    return;
+                }
+
+
+                /* Validate roll number */
+
+                if (!/^[0-9]+$/.test(rollno)) {
+
+                    event.preventDefault();
+
+                    document.getElementById("rollError")
+                        .textContent =
+                        "Please enter a valid roll number.";
+
+                    rollInput.focus();
+
+                    return;
+                }
+
+
+                /* Validate email */
+
+                const emailRegex =
+                    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+                if (!emailRegex.test(email)) {
+
+                    event.preventDefault();
+
+                    document.getElementById("emailError")
+                        .textContent =
+                        "Please enter a valid email.";
+
+                    emailInput.focus();
+
+                    return;
+                }
+
+                /*
+                 * Do not use event.preventDefault()
+                 * here when validation succeeds.
+                 *
+                 * The form will be submitted to:
+                 *
+                 * QuizServlet
+                 */
+
+            });
+
+    </script>
+
+</body>
+</html>

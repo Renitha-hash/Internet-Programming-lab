@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPkVQ35oE0ydpYvxzIW1-de9WhdAwfQtUshnDkH6H2SL4bLKTrI4w3bhw&s=10");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            color: white;
+            text-shadow: 3px 3px 5px #555;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        hr {
+            border: 0;
+            border-top: 2px solid white;
+        }
+
+        .nav-links {
+            margin: 15px 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: blue;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        .nav-links a:hover {
+            color: darkblue;
+            text-decoration: underline;
+        }
+
+        form {
+            background: white;
+            width: 100%;
+            border: 4px solid darkblue;
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 15px;
+            box-shadow: 5px 5px 15px #555;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid gray;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: darkblue;
+        }
+
+        input.error-input {
+            border-color: red;
+        }
+
+        .error {
+            color: red;
+            font-size: 13px;
+            margin-top: 4px;
+            min-height: 16px;
+        }
+
+        .success-msg {
+            color: green;
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        button[type="submit"] {
+            background: green;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        button[type="submit"]:hover {
+            background: #006400;
+        }
+
+        .login-box {
+            font-size: 18px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .login-box a {
+            text-decoration: none;
+            color: red;
+            font-weight: bold;
+        }
+
+        .login-box a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 500px) {
+            body {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            form {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>User Registration</h1>
+
+        <hr width="80%">
+
+        <div class="nav-links">
+            <a href="index.html">Home</a> |
+            <a href="login.html">Login</a>
+        </div>
+
+        <hr width="80%">
+
+        <form id="regForm" novalidate>
+
+            <!-- Name -->
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter Name"
+                    autocomplete="name"
+                >
+                <div id="nameError" class="error"></div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter Email"
+                    autocomplete="email"
+                >
+                <div id="emailError" class="error"></div>
+            </div>
+
+            <!-- Phone -->
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input
+                    type="text"
+                    id="phone"
+                    name="phone"
+                    placeholder="Enter 10-digit phone number"
+                    inputmode="numeric"
+                    maxlength="10"
+                    autocomplete="tel"
+                >
+                <div id="phoneError" class="error"></div>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter Password"
+                    autocomplete="new-password"
+                >
+                <div id="passwordError" class="error"></div>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    placeholder="Confirm Password"
+                    autocomplete="new-password"
+                >
+                <div id="confirmPasswordError" class="error"></div>
+            </div>
+
+            <button type="submit">Register</button>
+
+            <div id="formSuccess" class="success-msg"></div>
+
+        </form>
+
+        <br>
+
+        <p class="login-box">
+            Already Registered?
+            <a href="login.html">Login Here</a>
+        </p>
+
+    </div>
+
+    <script>
+        const form = document.getElementById("regForm");
+
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const phoneInput = document.getElementById("phone");
+        const passwordInput = document.getElementById("password");
+        const confirmPasswordInput = document.getElementById("confirmPassword");
+
+        const nameError = document.getElementById("nameError");
+        const emailError = document.getElementById("emailError");
+        const phoneError = document.getElementById("phoneError");
+        const passwordError = document.getElementById("passwordError");
+        const confirmPasswordError = document.getElementById("confirmPasswordError");
+        const formSuccess = document.getElementById("formSuccess");
+
+        form.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            // Clear previous messages
+            nameError.textContent = "";
+            emailError.textContent = "";
+            phoneError.textContent = "";
+            passwordError.textContent = "";
+            confirmPasswordError.textContent = "";
+            formSuccess.textContent = "";
+
+            // Remove error borders
+            const inputs = document.querySelectorAll("input");
+            inputs.forEach(input => {
+                input.classList.remove("error-input");
+            });
+
+            let isValid = true;
+
+            // Get values
+            const nameVal = nameInput.value.trim();
+            const emailVal = emailInput.value.trim();
+            const phoneVal = phoneInput.value.trim();
+            const passwordVal = passwordInput.value;
+            const confirmVal = confirmPasswordInput.value;
+
+            // -------------------------
+            // 1. Name Validation
+            // -------------------------
+            if (nameVal === "") {
+
+                nameError.textContent = "Please enter your name.";
+                nameInput.classList.add("error-input");
+                isValid = false;
+
+            } else if (!/^[A-Za-z ]+$/.test(nameVal)) {
+
+                nameError.textContent =
+                    "Name can only contain letters and spaces.";
+
+                nameInput.classList.add("error-input");
+                isValid = false;
+            }
+
+            // -------------------------
+            // 2. Email Validation
+            // -------------------------
+            const emailRegex =
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (emailVal === "") {
+
+                emailError.textContent =
+                    "Please enter your email.";
+
+                emailInput.classList.add("error-input");
+                isValid = false;
+
+            } else if (!emailRegex.test(emailVal)) {
+
+                emailError.textContent =
+                    "Please enter a valid email address.";
+
+                emailInput.classList.add("error-input");
+                isValid = false;
+            }
+
+            // -------------------------
+            // 3. Phone Validation
+            // -------------------------
+            if (phoneVal === "") {
+
+                phoneError.textContent =
+                    "Please enter your phone number.";
+
+                phoneInput.classList.add("error-input");
+                isValid = false;
+
+            } else if (!/^\d{10}$/.test(phoneVal)) {
+
+                phoneError.textContent =
+                    "Phone number must be exactly 10 digits.";
+
+                phoneInput.classList.add("error-input");
+                isValid = false;
+            }
+
+            // -------------------------
+            // 4. Password Validation
+            // -------------------------
+            if (passwordVal === "") {
+
+                passwordError.textContent =
+                    "Please enter a password.";
+
+                passwordInput.classList.add("error-input");
+                isValid = false;
+
+            } else if (passwordVal.length < 6) {
+
+                passwordError.textContent =
+                    "Password must be at least 6 characters long.";
+
+                passwordInput.classList.add("error-input");
+                isValid = false;
+            }
+
+            // -------------------------
+            // 5. Confirm Password
+            // -------------------------
+            if (confirmVal === "") {
+
+                confirmPasswordError.textContent =
+                    "Please confirm your password.";
+
+                confirmPasswordInput.classList.add("error-input");
+                isValid = false;
+
+            } else if (confirmVal !== passwordVal) {
+
+                confirmPasswordError.textContent =
+                    "Passwords do not match.";
+
+                confirmPasswordInput.classList.add("error-input");
+                isValid = false;
+            }
+
+            // -------------------------
+            // Registration Successful
+            // -------------------------
+            if (isValid) {
+
+                formSuccess.textContent =
+                    "Registration Successful! Redirecting...";
+
+                setTimeout(function () {
+                    window.location.href = "login.html";
+                }, 1500);
+            }
+        });
+
+        // Allow only numbers in phone field
+        phoneInput.addEventListener("input", function () {
+            this.value = this.value.replace(/\D/g, "");
+        });
+    </script>
+
+</body>
+</html>
